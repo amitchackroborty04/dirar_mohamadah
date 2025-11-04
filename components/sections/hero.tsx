@@ -57,14 +57,14 @@ export default function Hero() {
               <Button
                 size="lg"
                 onClick={() => setIsBookingOpen(true)}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
+                className="bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 cursor-pointer  text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
               >
                 {t("hero.cta")}
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-primary text-primary hover:bg-primary/10 font-semibold transition-all duration-300 hover:scale-105 bg-transparent"
+                className="border-[#FCAF1B] text-primary cursor-pointer  font-semibold transition-all duration-300 hover:scale-105 !bg-transparent hover:text-primary"
               >
                 {t("hero.learnMore")}
               </Button>
@@ -73,7 +73,7 @@ export default function Hero() {
 
           {/* Visual */}
           <ScrollTrigger animation="fade-in-right" delay={400}>
-            <div className="relative h-80 sm:h-96 lg:h-full min-h-120 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl overflow-hidden group">
+            <div className="relative h-80 sm:h-96 lg:h-full min-h-120  from-primary/10 to-accent/10 rounded-2xl overflow-hidden group">
               <Image
                 src="/business-owner-tally-dashboard.jpg"
                 alt={t("hero.title")}
@@ -81,7 +81,7 @@ export default function Hero() {
                 height={1000}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
+              <div className="absolute inset-0  from-foreground/20 via-transparent to-transparent" />
             </div>
           </ScrollTrigger>
         </div>

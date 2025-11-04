@@ -25,7 +25,7 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 z-50 w-full transition-all duration-300 bg-[#006EA6]! py-5 ${
+        className={`fixed top-0 z-50 w-full transition-all duration-300 bg-[#006EA6]! py-3 ${
           isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm" : "bg-transparent"
         }`}
       >
@@ -33,7 +33,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="font-semibold text-xl text-primary hover:text-primary/80 transition-colors">
               {/* {t("nav.brand")} */}
-              <Image src="/tally-logo-black.svg" alt="logo" width={100} height={100}  className="w-[100px] h-[100px]"/>
+              <Image src="/tally-logo-black.svg" alt="logo" width={1000} height={1000}  className="w-[140px] h-[120px]4"/>
             </Link>
 
             <div className="hidden md:flex items-center gap-8 ">
@@ -52,7 +52,7 @@ export default function Navigation() {
               <LanguageSwitcher />
               <Button
                 onClick={() => setIsBookingOpen(true)}
-                className="bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 text-primary-foreground transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer h-[50px] px-6"
+                className="bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 text-primary-foreground transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer h-[42px] px-6"
               >
                 {t("nav.bookNow")}
               </Button>
