@@ -14,14 +14,14 @@ const items = [
 
 export default function WhatIncluded() {
   return (
-    <section id="included" className="py-20 sm:py-28 lg:py-32 bg-card/50 relative">
+    <section id="included" className="py-20 sm:py-28 lg:py-32  relative bg-[#006EA6]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <ScrollTrigger animation="fade-in-left">
             <div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">Here's What You'll Get</h2>
-              <p className="text-lg text-foreground/60 mb-8">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance text-white">Here's What You'll Get</h2>
+              <p className="text-lg  mb-8 text-white">
                 Our comprehensive free review includes everything you need to optimize your Tally setup.
               </p>
             </div>
@@ -36,8 +36,8 @@ export default function WhatIncluded() {
                 delay={index * 100}
                 className="flex gap-3 items-start group"
               >
-                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <p className="text-foreground/80 group-hover:text-foreground transition-colors">{item}</p>
+                <Check className="w-5 h-5 text-white  mt-0.5 group-hover:scale-110 transition-transform" />
+                <p className="text-white group-hover:text-foreground transition-colors">{item}</p>
               </ScrollTrigger>
             ))}
           </div>
@@ -46,7 +46,7 @@ export default function WhatIncluded() {
         <ScrollTrigger className="mt-12 text-center">
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
+            className="bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 h-12 text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer"
           >
             Reserve Your Slot Now
           </Button>

@@ -13,8 +13,8 @@ const audiences = [
 
 export default function WhoItFor() {
   return (
-    <section id="who" className="py-20 sm:py-28 lg:py-32 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent pointer-events-none" />
+    <section id="who" className="py-20 sm:py-28 lg:py-32 relative bg-[#DCF2FB]">
+      <div className="absolute inset-0  from-accent/5 to-transparent pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollTrigger className="text-center mb-12 sm:mb-16 lg:mb-20">

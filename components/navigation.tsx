@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import BookingModal from "@/components/booking-modal"
 import LanguageSwitcher from "@/components/language-switcher"
 import { useLanguage } from "@/contexts/language-context"
+import Image from "next/image"
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -24,24 +25,25 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        className={`fixed top-0 z-50 w-full transition-all duration-300 bg-[#006EA6]! py-5 ${
           isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm" : "bg-transparent"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className=" max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="font-semibold text-xl text-primary hover:text-primary/80 transition-colors">
-              {t("nav.brand")}
+              {/* {t("nav.brand")} */}
+              <Image src="/tally-logo-black.svg" alt="logo" width={100} height={100}  className="w-[100px] h-[100px]"/>
             </Link>
 
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="#why" className="text-foreground/70 hover:text-foreground transition-colors text-sm">
+            <div className="hidden md:flex items-center gap-8 ">
+              <Link href="#why" className="text-white  transition-colors text-base">
                 {t("nav.why")}
               </Link>
-              <Link href="#included" className="text-foreground/70 hover:text-foreground transition-colors text-sm">
+              <Link href="#included" className="text-white  transition-colors text-base">
                 {t("nav.included")}
               </Link>
-              <Link href="#who" className="text-foreground/70 hover:text-foreground transition-colors text-sm">
+              <Link href="#who" className="text-white  transition-colors text-base">
                 {t("nav.who")}
               </Link>
             </div>
@@ -50,7 +52,7 @@ export default function Navigation() {
               <LanguageSwitcher />
               <Button
                 onClick={() => setIsBookingOpen(true)}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:shadow-lg hover:scale-105"
+                className="bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 text-primary-foreground transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer h-[50px] px-6"
               >
                 {t("nav.bookNow")}
               </Button>
