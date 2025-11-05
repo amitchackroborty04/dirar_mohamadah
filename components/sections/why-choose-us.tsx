@@ -24,16 +24,16 @@ const stats = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 sm:py-28 lg:py-32 bg-gradient-to-br from-primary/5 to-accent/5 relative">
+    <section className="py-20 sm:py-28 lg:py-32 bg-[#006EA6] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Stats */}
           <div>
             <ScrollTrigger className="mb-8 lg:mb-0">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance text-white">
                 Backed by Tally Expertise and Real Results
               </h2>
-              <p className="text-lg text-foreground/60">
+              <p className="text-lg  text-white">
                 We partner with Tally Solutions' official partner ecosystem to deliver top-tier consultation and
                 support. Trusted by businesses across the globe.
               </p>
@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
               const Icon = stat.icon
               return (
                 <ScrollTrigger key={index} animation="slide-in-up" delay={index * 150}>
-                  <Card className="p-6 text-center border border-border bg-card hover:bg-primary/5 transition-all duration-300 hover:border-primary/50 group">
+                  <Card className="p-6 text-center border border-border bg-card  transition-all duration-300 hover:border-primary/50 group">
                     <Icon className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
                     <div className="text-2xl sm:text-3xl font-bold text-foreground mb-1">{stat.number}</div>
                     <p className="text-sm text-foreground/60">{stat.label}</p>

@@ -29,15 +29,15 @@ export default function Booking() {
 
   return (
     <section className="py-20 sm:py-28 lg:py-32 relative overflow-hidden" id="booking">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-accent/5 to-primary/5 pointer-events-none" />
       <div className="absolute top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {showSuccess && (
-          <div className="mb-8 p-4 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 border-2 border-green-200 dark:border-green-800 rounded-lg animate-fadeInUp">
+          <div className="mb-8 p-4 bg-linear-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 border-2 border-green-200 dark:border-green-800 rounded-lg animate-fadeInUp">
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400 shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-green-900 dark:text-green-100">Booking Confirmed!</p>
                 <p className="text-sm text-green-800 dark:text-green-200 mt-1">
@@ -67,7 +67,7 @@ export default function Booking() {
                   console.log("[v0] Opening booking modal...")
                   setIsBookingOpen(true)
                 }}
-                className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 gap-2 px-8"
+                className=" bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 hover:from-primary/90 cursor-pointer  hover:to-primary/70 text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 gap-2 px-8"
               >
                 <Calendar className="w-5 h-5" />
                 Book a Review Call
@@ -75,7 +75,7 @@ export default function Booking() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-primary/30 text-primary hover:bg-primary/10 font-semibold transition-all duration-300 hover:scale-105 bg-transparent gap-2"
+                className="border-2 border-[#FCAF1B] hover:bg-transparent hover:text-primary cursor-pointer  font-semibold transition-all duration-300 hover:scale-105 bg-transparent gap-2"
                 onClick={() => console.log("[v0] Contact support clicked")}
               >
                 <Info className="w-5 h-5" />

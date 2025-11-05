@@ -1,3 +1,5 @@
+
+
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
@@ -7,20 +9,28 @@ export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage()
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="inline-flex items-center rounded-md border text-white p-1">
       <Button
-        variant={language === "en" ? "default" : "outline"}
+        variant="ghost"
         size="sm"
         onClick={() => setLanguage("en")}
-        className={`font-semibold transition-all ${language === "en" ? "bg-primary text-primary-foreground" : "text-foreground/70 hover:text-foreground"}`}
+        className={`px-3 font-semibold transition-all ${
+          language === "en"
+            ? "bg-[#FCAF1B] text-primary-foreground shadow"
+            : "text-white hover:text-foreground "
+        }`}
       >
         EN
       </Button>
       <Button
-        variant={language === "ar" ? "default" : "outline"}
+        variant="ghost"
         size="sm"
         onClick={() => setLanguage("ar")}
-        className={`font-semibold transition-all ${language === "ar" ? "bg-primary text-primary-foreground" : "text-foreground/70 hover:text-foreground"}`}
+        className={`px-3 font-semibold transition-all ${
+          language === "ar"
+            ? "bg-[#FCAF1B] text-primary-foreground shadow"
+            : "text-white hover:text-foreground"
+        }`}
       >
         AR
       </Button>

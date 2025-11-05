@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import ScrollTrigger from "@/components/scroll-trigger"
 import BookingModal from "@/components/booking-modal"
 import { useLanguage } from "@/contexts/language-context"
+import Image from "next/image"
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -16,9 +17,9 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-48 lg:pb-32 overflow-hidden bg-[#FFFBE5]">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+      <div className="absolute inset-0  from-primary/5 via-transparent to-accent/5 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -56,14 +57,14 @@ export default function Hero() {
               <Button
                 size="lg"
                 onClick={() => setIsBookingOpen(true)}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
+                className="bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 cursor-pointer  text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
               >
                 {t("hero.cta")}
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-primary text-primary hover:bg-primary/10 font-semibold transition-all duration-300 hover:scale-105 bg-transparent"
+                className="border-[#FCAF1B] text-primary cursor-pointer  font-semibold transition-all duration-300 hover:scale-105 !bg-transparent hover:text-primary"
               >
                 {t("hero.learnMore")}
               </Button>
@@ -72,13 +73,15 @@ export default function Hero() {
 
           {/* Visual */}
           <ScrollTrigger animation="fade-in-right" delay={400}>
-            <div className="relative h-80 sm:h-96 lg:h-full min-h-80 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl overflow-hidden group">
-              <img
+            <div className="relative h-80 sm:h-96 lg:h-full min-h-120  from-primary/10 to-accent/10 rounded-2xl overflow-hidden group">
+              <Image
                 src="/business-owner-tally-dashboard.jpg"
                 alt={t("hero.title")}
+                width={1000}
+                height={1000}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
+              <div className="absolute inset-0  from-foreground/20 via-transparent to-transparent" />
             </div>
           </ScrollTrigger>
         </div>
