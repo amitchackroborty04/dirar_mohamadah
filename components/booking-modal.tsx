@@ -17,7 +17,7 @@ export interface BookingFormData {
   email: string
   phone: string
   company: string
-  date: string | undefined          // <-- ISO "YYYY-MM-DD"
+  date: string | undefined        
   notes: string
   preferredTime: string
 }
@@ -317,7 +317,7 @@ export default function BookingModal({
             <Button
               type="submit"
               disabled={isLoading}
-              className="bg-primary text-primary-foreground hover:opacity-90 transition-all"
+              className="bg-primary text-primary-foreground hover:opacity-90 transition-all cursor-pointer"
             >
               {isLoading ? `⏳ ${t("modal.booking")}` : <span className="flex items-center gap-2"><Check className="w-5 h-5" />{t("modal.confirm")}</span>}
             </Button>
