@@ -7,6 +7,7 @@ import BookingModal, { BookingFormData } from "@/components/booking-modal"
 import { Button } from "@/components/ui/button"
 import { Calendar, Info, CheckCircle } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import { toast } from "sonner"
 
 export default function BookingSection() {
   const { t } = useLanguage()
@@ -23,31 +24,61 @@ export default function BookingSection() {
     }
   }
 
+  // const handleSubmit = async (data: BookingFormData) => {
+  //   setLoading(true)
+  //   try {
+  //     const res = await fetch("/api/create-event", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(data),
+  //     })
+
+  //     if (!res.ok) {
+  //       const err = await res.json()
+  //       alert("Booking failed: " + (err?.error?.message || res.statusText))
+  //       return
+  //     }
+
+  //     setShowSuccess(true)
+  //     setModalOpen(false)
+  //     setTimeout(() => setShowSuccess(false), 5000)
+  //   } catch (e) {
+  //     console.error(e)
+  //     alert("Server error")
+  //   } finally {
+  //     setLoading(false)
+  //   }
+  // }
+
   const handleSubmit = async (data: BookingFormData) => {
-    setLoading(true)
-    try {
-      const res = await fetch("/api/create-event", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
+  setLoading(true)
+  try {
+    const res = await fetch("/api/create-event", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
 
-      if (!res.ok) {
-        const err = await res.json()
-        alert("Booking failed: " + (err?.error?.message || res.statusText))
-        return
-      }
-
-      setShowSuccess(true)
-      setModalOpen(false)
-      setTimeout(() => setShowSuccess(false), 5000)
-    } catch (e) {
-      console.error(e)
-      alert("Server error")
-    } finally {
-      setLoading(false)
+    if (!res.ok) {
+      const err = await res.json()
+      toast.error("Booking failed: " + (err?.error?.message || res.statusText))
+      return
     }
+
+    toast.success("Booking successful!")
+    setShowSuccess(true)
+    setTimeout(() => setShowSuccess(false), 5000)
+
+    setModalOpen(false)
+
+  } catch (e) {
+    console.error(e)
+    toast.error("Server error")
+  } finally {
+    setLoading(false)
   }
+}
+
 
   return (
     <section className="py-20 sm:py-28 lg:py-32 relative overflow-hidden" id="booking">
@@ -79,7 +110,7 @@ export default function BookingSection() {
             <Button
               size="lg"
               onClick={openModal}
-              className="bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 font-semibold transition-all duration-300 hover:scale-105 gap-2 px-8"
+              className="bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 font-semibold transition-all duration-300 hover:scale-105 gap-2 px-8 cursor-pointer "
             >
               <Calendar className="w-5 h-5" />
               {t("booking.cta")}
