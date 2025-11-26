@@ -30,7 +30,7 @@ export const translations = {
     "hero.title":
       "VAT-Ready Business Accounting & Management Software for Companies in Saudi Arabia & the GCC",
     "hero.description":
-      "Trusted by 7,000,000+ active users across 130+ countries — TallyPrime helps you automate accounting, manage inventory, get real-time financial insights, and ensure full VAT compliance.",
+      "Trusted by 7,500,000+ active users across 120+ countries — TallyPrime helps you automate accounting, manage inventory, get real-time financial insights, & ensure full VAT compliance.",
     "hero.cta": "Book a Free Consultation",
     "hero.learnMore": "Schedule a Personalized Demo",
 
@@ -42,29 +42,30 @@ export const translations = {
     "key.point3": "Inventory & stock control across multiple locations",
     "key.point4": "Real-time financial & MIS reporting",
     "key.point5": "Multi-user & multi-branch support",
-    "key.point6": "Simple and intuitive interface",
+    "key.point6": "Simple & intuitive interface",
     "key.point7": "Local implementation, training & support",
 
     // What's Included Section
     "consult.title": "Free Consultation Includes:",
-    "consult.subtitle": "During your complimentary session, you will receive:",
+    // "consult.subtitle": "During your complimentary session, you will receive:",
+    "consult.subtitle": "If you're currently using Excel, manual bookkeeping, or need a system upgrade, this session will show how TallyPrime can streamline operations and accelerate business.",
     "consult.point1":
       "A personalized system walkthrough based on your industry",
-    "consult.point2": "Recommended accounting and inventory workflows",
+    "consult.point2": "Recommended accounting & inventory workflows",
     "consult.point3": "VAT best-practice guidance tailored to Saudi compliance",
-    "consult.point4": "Pricing, licensing, and implementation guidance",
+    "consult.point4": "Pricing, licensing, & implementation guidance",
     "consult.point5": "A live, customized TallyPrime demo",
     "consult.description":
-      "This consultation is designed specifically for business decision-makers evaluating digital transformation and automation.",
+      "This consultation is designed specifically for business decision-makers evaluating digital transformation & automation.",
     "consult.note":
-      "If you're currently using Excel, manual bookkeeping, or outdated systems, this session will show how TallyPrime can streamline operations and accelerate business growth.",
+      "If you're currently using Excel, manual bookkeeping, or outdated systems, this session will show how TallyPrime can streamline operations & accelerate business growth.",
     "consult.cta": "Reserve Your Slot Now",
 
     // Who It's For Section
     // EN
     "trust.title": "Trusted Worldwide",
     "trust.subtitle":
-      "Trusted by businesses in retail, trading, contracting, manufacturing, and many more industries across 140+ countries.",
+      "Trusted by businesses in retail, trading, contracting, manufacturing, & many more industries across 120+ countries.",
     "trust.point1": "Seamless setup & configuration",
     "trust.point2": "Live training for your team",
     "trust.point3": "Ongoing technical support",
@@ -76,13 +77,13 @@ export const translations = {
     // EN
     "whychoose.title": "Why Businesses Choose TallyPrime",
     "whychoose.description":
-      "Smart billing, real-time business insights, seamless inventory management, and complete VAT compliance — all in one powerful system that’s easy to use and scalable as your business grows.",
+      "Smart billing, real-time business insights, seamless inventory management, & complete VAT compliance — all in one powerful system that’s easy to use & scalable as your business grows.",
 
 
     // Booking Section
     "booking.title": "Book your free consultation now!",
     "booking.subtitle":
-      "Book your free 30-minute product review session today. Our experts will analyze your current setup and provide personalized recommendations.",
+      "Book your free 30-minute product review session today. Our experts will analyze your current setup & provide personalized recommendations.",
     "booking.cta": "Book a Review Call",
     "booking.contact": "Contact Support",
     "booking.tip":
@@ -93,9 +94,9 @@ export const translations = {
     "booking.notice":
       "Please note: Consultation slots are reserved for businesses actively planning to implement TallyPrime. If you are not currently evaluating a business software upgrade, we kindly ask that you do not submit this form.",
     "booking.trusted":
-      "Trusted by businesses in retail, trading, manufacturing, contracting, and more across more than 140 countries.",
+      "Trusted by businesses in retail, trading, manufacturing, contracting, & more across more than 120 countries.",
     "booking.support":
-      "Our certified team ensures seamless implementation, live training, ongoing support, and smooth onboarding — helping your business get immediate value from day one.",
+      "Our certified team ensures seamless implementation, live training, ongoing support, & smooth onboarding — helping your business get immediate value from day one.",
 
 
     // Booking Modal
@@ -153,7 +154,7 @@ export const translations = {
     "hero.badge": "مراجعة منتج مجانية",
     "hero.title": "برنامج محاسبة وإدارة أعمال متوافق مع ضريبة القيمة المضافة للشركات في السعودية ودول الخليج",
     "hero.description":
-      "موثوق به من قبل أكثر من 7,000,000 مستخدم نشط في أكثر من 130 دولة — يساعدك TallyPrime على أتمتة المحاسبة، وإدارة المخزون، والحصول على تقارير مالية فورية، وضمان الامتثال الكامل لضريبة القيمة المضافة.",
+      "موثوق به من قبل أكثر من 7,500,000 مستخدم نشط في أكثر من 130 دولة — يساعدك TallyPrime على أتمتة المحاسبة، وإدارة المخزون، والحصول على تقارير مالية فورية، وضمان الامتثال الكامل لضريبة القيمة المضافة.",
     "hero.cta": "احجز استشارة مجانية",
     "hero.learnMore": "حدد موعد لعرض مخصص",
 
@@ -174,7 +175,8 @@ export const translations = {
     // What's Included Section
     // AR
     "consult.title": "تشمل الاستشارة المجانية:",
-    "consult.subtitle": "أثناء جلستك المجانية، ستحصل على:",
+    // "consult.subtitle": "أثناء جلستك المجانية، ستحصل على:",
+    "consult.subtitle": "إذا كنت تستخدم Excel، أو تقوم بمسك الدفاتر يدويًا، أو تحتاج إلى ترقية للنظام، فسوف توضح لك هذه الجلسة كيف يمكن لبرنامج TallyPrime تحسين العمليات وتسريع نمو الأعمال.",
     "consult.point1": "عرض مخصص للنظام بناءً على مجال عملك",
     "consult.point2": "توصيات لسير العمل المحاسبي وإدارة المخزون",
     "consult.point3":
@@ -191,7 +193,7 @@ export const translations = {
     // AR
     "trust.title": "ثقة عالمية",
     "trust.subtitle":
-      "موثوق من قبل الشركات في مجالات التجزئة والتجارة والمقاولات والتصنيع والعديد من الصناعات الأخرى في أكثر من 140 دولة.",
+      "موثوق من قبل الشركات في مجالات التجزئة والتجارة والمقاولات والتصنيع والعديد من الصناعات الأخرى في أكثر من 120 دولة.",
     "trust.point1": "إعداد وتكوين سلس",
     "trust.point2": "تدريب مباشر لفريقك",
     "trust.point3": "دعم فني مستمر",
@@ -220,7 +222,7 @@ export const translations = {
     "booking.notice":
       "يرجى الملاحظة: يتم تخصيص مواعيد الاستشارة للشركات التي تخطط فعلياً لتطبيق برنامج TallyPrime. إذا لم تكن تقوم حالياً بتقييم ترقية نظام عملك، فنرجو عدم إرسال هذا النموذج.",
     "booking.trusted":
-      "موثوق لدى الشركات في مجالات التجارة والتجزئة والتصنيع والمقاولات وغيرها في أكثر من 140 دولة.",
+      "موثوق لدى الشركات في مجالات التجارة والتجزئة والتصنيع والمقاولات وغيرها في أكثر من 120 دولة.",
     "booking.support":
       "يضمن فريقنا المعتمد تنفيذًا سلسًا، تدريبًا مباشراً، دعمًا مستمرًا، وتفعيلًا سريعًا — لمساعدة عملك على تحقيق القيمة من اليوم الأول.",
 

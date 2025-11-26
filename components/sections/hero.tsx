@@ -22,9 +22,9 @@ export default function Hero() {
       <div className="absolute inset-0  from-primary/5 via-transparent to-accent/5 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid  grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-7 items-center">
           {/* Content */}
-          <div className="space-y-6 sm:space-y-8">
+          <div className="space-y-6 sm:space-y-8 col-span-5">
             {/* <div
               className={`transition-all duration-1000 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
             >
@@ -72,14 +72,14 @@ export default function Hero() {
           </div>
 
           {/* Visual */}
-          <ScrollTrigger animation="fade-in-right" delay={400}>
-            <div className="relative h-80 sm:h-96 lg:h-full min-h-[580px]  from-primary/10 to-accent/10 rounded-2xl overflow-hidden group">
+          <ScrollTrigger className="col-span-7" animation="fade-in-right" delay={300}>
+            <div className="relative h-80 sm:h-96 lg:h-full min-h-[580px]    from-primary/10 to-accent/10 rounded-2xl overflow-hidden group">
               <Image
-                src="/heronew.svg"
+                src="/newimage.webp"
                 alt={t("hero.title")}
                 width={1000}
                 height={1000}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="absolute inset-0 w-full h-full object-cover  transition-transform duration-500"
               />
               <div className="absolute inset-0  from-foreground/20 via-transparent to-transparent" />
             </div>

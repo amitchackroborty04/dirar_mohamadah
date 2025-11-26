@@ -6,7 +6,6 @@ import { Analytics } from "@vercel/analytics/next"
 import { Providers } from "./providers"
 import "./globals.css"
 import { SessionProviders } from "@/components/sections/Provider"
-// import { Toast } from "@/components/ui/toast"
 import { Toaster } from "@/components/ui/sonner"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -15,8 +14,11 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Tally Product Review | Schedule Your Free Session",
   description:
-    "Transform your Tally setup with a free personalized product review. Identify inefficiencies, enhance compliance, and boost team productivity.",
+    "Transform your Tally setup with a free personalized product review. Identify inefficiencies, enhance compliance, & boost team productivity.",
   generator: "v0.app",
+  icons: "/tally-logo-black.svg",
+
+  
 }
 
 export default function RootLayout({
@@ -31,7 +33,9 @@ export default function RootLayout({
         className={`${_geist.className} antialiased`}
       >
         <SessionProviders>
-          <Providers>{children}</Providers>
+          <Providers>
+            {children}
+            </Providers>
           <Toaster
             position="top-right"
             richColors
