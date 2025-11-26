@@ -8,7 +8,7 @@ import { Award, Users, Globe } from "lucide-react"
 const stats = [
   {
     icon: Users,
-    number: "7M+",
+    number: "7.5M+",
     label: {
       en: "Tally Users Trusted",
       ar: "مستخدمو تالي يثقون بنا",
@@ -16,7 +16,7 @@ const stats = [
   },
   {
     icon: Globe,
-    number: "130+",
+    number: "120+",
     label: {
       en: "Countries Served",
       ar: "دول نخدمها",
@@ -24,7 +24,7 @@ const stats = [
   },
   {
     icon: Award,
-    number: "37K",
+    number: "27K",
     label: {
       en: "Certified Partners",
       ar: "شركاء معتمدون",

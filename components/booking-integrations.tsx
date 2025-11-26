@@ -4,7 +4,7 @@
  * Booking Integration Helper
  *
  * This component manages integrations with calendar booking services.
- * Supports: Calendly, Zoho Bookings, and custom webhook integration
+ * Supports: Calendly, Zoho Bookings, & custom webhook integration
  *
  * Setup Instructions:
  * 1. CALENDLY: Add environment variables NEXT_PUBLIC_CALENDLY_URL (your calendly link)

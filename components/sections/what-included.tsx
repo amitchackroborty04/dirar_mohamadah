@@ -28,8 +28,8 @@ export default function WhatIncluded() {
                 {t("consult.title")}
               </h2>
               <p className="text-lg text-white mb-6">{t("consult.subtitle")}</p>
-              <p className="text-white/90 mb-4">{t("consult.description")}</p>
-              <p className="text-white/80">{t("consult.note")}</p>
+              {/* <p className="text-white/90 mb-4">{t("consult.description")}</p>
+              <p className="text-white/80">{t("consult.note")}</p> */}
             </div>
           </ScrollTrigger>
 
