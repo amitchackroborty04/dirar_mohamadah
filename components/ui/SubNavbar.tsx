@@ -44,7 +44,7 @@ export default function SubNavbar() {
               </Link>
             </div>
 
-            <div>
+            {/* <div>
               <Link href="/">
                 <img
                   src="/newlogo.svg"
@@ -54,7 +54,7 @@ export default function SubNavbar() {
                   className="w-[140px] h-10"
                 />
               </Link>
-            </div>
+            </div> */}
 
             {/* RIGHT SECTION: LANGUAGE + BOOK NOW */}
             <div className="flex items-center gap-4">
@@ -73,7 +73,7 @@ export default function SubNavbar() {
       </nav>
 
       {/* Booking Modal */}
-      {isBookingOpen && <BookingModal onClose={() => setIsBookingOpen(false)} />}
+      {/* {isBookingOpen && <BookingModal onClose={() => setIsBookingOpen(false)} />} */}
     </>
   );
 }

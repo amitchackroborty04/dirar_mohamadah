@@ -1,118 +1,136 @@
 
-"use client"
 
-import { useState } from "react"
-import { useSession, signIn } from "next-auth/react"
-import BookingModal, { BookingFormData } from "@/components/booking-modal"
-import { Button } from "@/components/ui/button"
-import { Calendar, Info, CheckCircle } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
-import { toast } from "sonner"
+
+"use client";
+
+import { useState } from "react";
+import BookingModal from "@/components/booking-modal";
+import { Button } from "@/components/ui/button";
+import { Calendar, Info, CheckCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
+import { toast } from "sonner";
 
 export default function BookingSection() {
-  const { t } = useLanguage()
-  const { status } = useSession()
-  const [modalOpen, setModalOpen] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [showSuccess, setShowSuccess] = useState(false)
+  const { t } = useLanguage();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const openModal = () => {
-    if (status === "authenticated") {
-      setModalOpen(true)
-    } else {
-      signIn("azure-ad")
-    }
-  }
+  const openModal = () => setModalOpen(true);
 
-  const handleSubmit = async (data: BookingFormData) => {
-    setLoading(true)
+  const handleSubmit = async (data: any) => {
+    setLoading(true);
+
     try {
-      const res = await fetch("/api/create-event", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
+      const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_EVENT_LINK;
 
-      if (!res.ok) {
-        const err = await res.json()
-        toast.error("Booking failed: " + (err?.error?.message || res.statusText))
-        return
+      if (!calendlyUrl) {
+        toast.error("Calendly link is missing. Please contact admin.");
+        setLoading(false);
+        return;
       }
 
-      toast.success("Booking successful!")
-      setShowSuccess(true)
-      setModalOpen(false)
-      setTimeout(() => setShowSuccess(false), 5000)
-    } catch (e) {
-      console.error(e)
-      toast.error("Server error")
+      // Calendly Prefill URL with user's data
+      const prefilledLink = `${calendlyUrl}?` +
+        `name=${encodeURIComponent(data.fullName || "")}` +
+        `&email=${encodeURIComponent(data.email || "")}` +
+        `&a1=${encodeURIComponent(data.phone || "")}` +
+        `&a2=${encodeURIComponent(data.company || "")}` +
+        `&a3=${encodeURIComponent(data.notes || "")}`;
+
+      // Open Calendly in new tab
+      window.open(prefilledLink, "_blank", "noopener,noreferrer");
+
+      // Show success message
+      toast.success(t("booking.redirecting") || "Redirecting to Calendly...");
+      setShowSuccess(true);
+      setModalOpen(false);
+
+      // Auto hide success message after 6 seconds
+      setTimeout(() => setShowSuccess(false), 6000);
+
+    } catch (error) {
+      console.error("Calendly redirect error:", error);
+      toast.error("Failed to open booking. Please try again.");
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <section className="py-20 sm:py-28 lg:py-32 relative overflow-hidden" id="booking">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
+        {/* Success Message */}
         {showSuccess && (
-          <div className="mb-8 p-4 rounded-lg border-2 bg-green-50 dark:bg-green-900/20">
-            <div className="flex items-start gap-3">
-              <CheckCircle className="w-6 h-6 text-green-600" />
+          <div className="mb-10 p-6 rounded-xl border-2 bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800 shadow-lg">
+            <div className="flex items-center gap-4">
+              <CheckCircle className="w-10 h-10 text-green-600 dark:text-green-400 flex-shrink-0" />
               <div>
-                <p className="font-semibold text-green-900 dark:text-green-100">
-                  {t("booking.confirmed")}
+                <p className="font-bold text-lg text-green-900 dark:text-green-100">
+                  {t("booking.confirmed") || "You're being redirected!"}
                 </p>
                 <p className="text-sm text-green-800 dark:text-green-200 mt-1">
-                  {t("booking.confirmedMsg")}
+                  {t("booking.confirmedMsg") || "A new tab has opened with your pre-filled Calendly booking."}
                 </p>
               </div>
             </div>
           </div>
         )}
 
-        <div className="text-center space-y-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            {t("booking.title")}
-          </h2>
-          <p className="text-lg sm:text-xl text-foreground/60">{t("booking.subtitle")}</p>
+        <div className="text-center space-y-10">
 
-          {/* ✅ NEW CONTENT */}
-          <div className="flex flex-col md:flex-row items-center">
-          <p className="text-sm text-foreground/50 max-w-2xl mx-auto mt-4">
-            {t("booking.notice")}
-          </p>
-          <span className="text-7xl">⚠️</span>
+          {/* Main Title & Subtitle */}
+          <div className="space-y-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
+              {t("booking.title")}
+            </h2>
+            <p className="text-lg sm:text-xl text-foreground/60 max-w-2xl mx-auto">
+              {t("booking.subtitle")}
+            </p>
           </div>
 
-          <div className="mt-8 text-center max-w-3xl mx-auto space-y-3 text-foreground/70">
+          {/* Warning Notice with Emoji */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 py-6">
+            <p className="text-sm sm:text-base text-foreground/60 max-w-2xl leading-relaxed">
+              {t("booking.notice")}
+            </p>
+           <span className="text-7xl">⚠️</span>
+          </div>
+
+          {/* Trust & Support Text */}
+          <div className="mt-10 text-center max-w-3xl mx-auto space-y-4 text-foreground/70 text-base sm:text-lg">
             <p>{t("booking.trusted")}</p>
             <p>{t("booking.support")}</p>
           </div>
-          {/* ✅ END NEW CONTENT */}
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">
+
+            {/* Main Booking Button */}
             <Button
               size="lg"
               onClick={openModal}
-              className="bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 font-semibold transition-all duration-300 hover:scale-105 gap-2 px-8 cursor-pointer "
+              className="bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 text-black font-medium cursor-pointer text-lg px-10 py-7 gap-3 hover:scale-105 transition-all duration-300 shadow-lg"
             >
-              <Calendar className="w-5 h-5" />
-              {t("booking.cta")}
+              <Calendar className="w-7 h-7" />
+              {t("booking.cta") || "Book a Free Consultation"}
             </Button>
 
+            {/* Contact Button */}
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-[#FCAF1B] hover:bg-transparent hover:text-[#FCAF1B] text-[#FCAF1B] font-medium transition-all duration-300 hover:scale-105 gap-2"
+              className="border-2 border-[#FCAF1B] text-[#FCAF1B] hover:bg-[#FCAF1B] font-midium cursor-pointer text-lg px-8 py-7 gap-3 hover:scale-105 transition-all duration-300"
             >
-              <Info className="w-5 h-5" />
-              {t("booking.contact")}
+              <Info className="w-6 h-6" />
+              {t("booking.contact") || "Contact Us"}
             </Button>
           </div>
         </div>
       </div>
 
+      {/* Booking Modal */}
       <BookingModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
@@ -120,5 +138,5 @@ export default function BookingSection() {
         isLoading={loading}
       />
     </section>
-  )
+  );
 }

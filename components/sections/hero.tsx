@@ -9,7 +9,7 @@ import Image from "next/image"
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [isBookingOpen, setIsBookingOpen] = useState(false)
+  // const [isBookingOpen, setIsBookingOpen] = useState(false)
   const { t } = useLanguage()
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function Hero() {
               {/* CTA BUTTON */}
               <Button
                 size="lg"
-                onClick={() => setIsBookingOpen(true)}
+                // onClick={() => setIsBookingOpen(true)}
                 className="bg-[#FCAF1B] hover:bg-[#FCAF1B]/90 text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
               >
                 {t("hero.cta")}
@@ -62,7 +62,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-[#FCAF1B] text-primary font-semibold transition-all duration-300 hover:scale-105 bg-transparent hover:text-primary"
+                className="border-[#FCAF1B] hover:bg-transparent text-primary font-semibold transition-all duration-300 hover:scale-105 bg-transparent hover:text-primary"
               >
                 {t("hero.learnMore")}
               </Button>
@@ -92,7 +92,7 @@ export default function Hero() {
       </div>
 
       {/* Booking Modal */}
-      {isBookingOpen && <BookingModal onClose={() => setIsBookingOpen(false)} />}
+      {/* {isBookingOpen && <BookingModal onClose={() => setIsBookingOpen(false)} />} */}
     </section>
   )
 }
