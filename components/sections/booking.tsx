@@ -90,16 +90,7 @@ export default function BookingSection() {
               <Calendar className="w-7 h-7" />
               {t("booking.cta") || "Book a Free Consultation"}
             </Button>
-
-            {/* Contact Button */}
-            {/* <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-[#FCAF1B] text-[#FCAF1B] hover:bg-[#FCAF1B] font-medium cursor-pointer text-lg px-8 py-7 gap-3 hover:scale-105 transition-all duration-300"
-            >
-              <Info className="w-6 h-6" />
-              {t("booking.contact") || "Contact Us"}
-            </Button> */}
+          
           </div>
         </div>
       </div>
