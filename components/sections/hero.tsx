@@ -91,8 +91,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Booking Modal */}
-      {/* {isBookingOpen && <BookingModal onClose={() => setIsBookingOpen(false)} />} */}
     </section>
   )
 }
